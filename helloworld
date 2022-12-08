@@ -1,3 +1,4 @@
 print("Hello World")
 KEY="12345"
 print(KEY)
+Allow3DESEncryptionKey
