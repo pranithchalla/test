@@ -28,5 +28,6 @@ jobs:
        run: echo "added env"
        id: step_one
      - name: Use it
-       run: echo ${{ env.First_Name }}
+       run: echo"using step" 
+          echo ${{ env.First_Name }}
        
