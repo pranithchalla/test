@@ -23,8 +23,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
      - name: Set the value
-       id: step_one
        run: echo "FOO=BAR" >> GITHUB_OUTPUT
+       id: step_one
      - name: Use it
        run: echo  ${{join(steps.step_one.outputs.*, '\n')}}
        
