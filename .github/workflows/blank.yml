@@ -19,7 +19,11 @@ defaults:
 # A workflow run is made up of one or more jobs that can run sequentially or in
 
 env:
-  DAY_OF_WEEK: Monday
+ GLVERSION: "8.15.2"
+ GLROOT: "C:\\Gitleaks"
+ gitleaks_path: "$env:GLROOT\\gitleaks_$env:GLVERSION_windows_x64"
+ gitleaks_archive_path: "$env:gitleaks_path.zip"
+ gitleaks_bin: "$env:gitleaks_path\\gitleaks.exe"
 
 jobs:
   # This workflow contains a single job called "build"
@@ -40,5 +44,5 @@ jobs:
         run: |
           echo ${{ steps.step_one.outputs.test }}
           echo ${{ steps.step_one.outputs.testwbr }}
-          echo "Today is $DAY_OF_WEEK!"
+          echo "Today is $gitleaks_bin"
        
