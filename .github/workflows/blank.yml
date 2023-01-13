@@ -44,5 +44,5 @@ jobs:
         run: |
           echo ${{ steps.step_one.outputs.test }}
           echo ${{ steps.step_one.outputs.testwbr }}
-          echo "Today is $gitleaks_bin"
+          echo "Today is $gitleaks_path"
        
