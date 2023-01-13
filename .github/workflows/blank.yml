@@ -27,5 +27,5 @@ jobs:
           First_Name: Mona
        id: step_one
      - name: Use it
-       run: echo $env.First_Name
+       run: echo ${{ env.First_Name }}
        
