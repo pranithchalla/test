@@ -25,6 +25,7 @@ jobs:
      - name: Set the value
        env:
           First_Name: Mona
+       run: echo "added env"
        id: step_one
      - name: Use it
        run: echo ${{ env.First_Name }}
