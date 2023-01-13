@@ -26,4 +26,5 @@ jobs:
        id: step_one
        run: echo "FOO=BAR" >> GITHUB_OUTPUT
      - name: Use it
-       run: echo ${{ steps.step_one.outputs.FOO }}
+       run: echo  ${{join(steps.step_one.outputs.*, '\n')}}
+       
