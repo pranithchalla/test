@@ -21,9 +21,9 @@ defaults:
 env:
  GLVERSION: "8.15.2"
  GLROOT: "C:\\Gitleaks"
- gitleaks_path: $env:GLROOT+"\\gitleaks_"+ $env:GLVERSION +"_windows_x64"
- gitleaks_archive_path: "$env:gitleaks_path.zip"
- gitleaks_bin: "$env:gitleaks_path\\gitleaks.exe"
+ gitleaks_path: ""
+ gitleaks_archive_path: ""
+ gitleaks_bin: ""
 
 jobs:
   # This workflow contains a single job called "build"
@@ -35,6 +35,7 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
+           $env:gitleaks_path+= $env:GLROOT+"\\gitleaks_"+ $env:GLVERSION +"_windows_x64"
            echo "test='hello'" >> $env:GITHUB_OUTPUT
            echo "testwbr=hello" >> $env:GITHUB_OUTPUT
         #  echo "action_state=yellow" >> $GITHUB_ENV
