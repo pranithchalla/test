@@ -40,5 +40,5 @@ jobs:
         run: |
           echo ${{ steps.step_one.outputs.test }}
           echo ${{ steps.step_one.outputs.testwbr }}
-          run: echo "Today is $DAY_OF_WEEK!"
+          echo "Today is $DAY_OF_WEEK!"
        
