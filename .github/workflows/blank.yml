@@ -35,7 +35,7 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
-           $env:gitleaks_path += $env:GLROOT+"\\gitleaks_"+ $env:GLVERSION +"_windows_x64"
+           echo $env:gitleaks_path += $env:GLROOT+"\\gitleaks_"+ $env:GLVERSION +"_windows_x64"
            echo "test='hello'" >> $env:GITHUB_OUTPUT
            echo "testwbr=hello" >> $env:GITHUB_OUTPUT
         #  echo "action_state=yellow" >> $GITHUB_ENV
@@ -45,5 +45,5 @@ jobs:
         run: |
           echo ${{ steps.step_one.outputs.test }}
           echo ${{ steps.step_one.outputs.testwbr }}
-          echo "Today is $gitleaks_path"
+          echo "Today is  $env:gitleaks_path"
        
