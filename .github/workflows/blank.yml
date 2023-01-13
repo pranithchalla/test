@@ -33,5 +33,5 @@ jobs:
           echo "test3='hello3'" >> GITHUB_OUTPUT
       - name: Use the value
         run: |
-          echo ${{ steps.step1.outputs.test3 }}
+          echo ${{ steps.step1.outputs.test2 }}
        
