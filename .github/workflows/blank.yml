@@ -15,7 +15,7 @@ on:
   
 defaults:
   run:
-    shell: pwsh
+    shell: bash
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -33,9 +33,5 @@ jobs:
           echo "test3='hello3'" >> GITHUB_OUTPUT
       - name: Use the value
         run: |
-          echo "${{ env.action_state }}"
-          echo ${{ env.action_state }}
-          echo ${{ steps.step1.outputs.test }}
-          echo ${{ steps.step1.outputs.test2 }}
           echo ${{ steps.step1.outputs.test3 }}
        
