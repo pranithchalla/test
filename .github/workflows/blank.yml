@@ -21,7 +21,7 @@ defaults:
 env:
  GLVERSION: "8.15.2"
  GLROOT: "C:\\Gitleaks"
- gitleaks_path: "{$env:GLROOT}\\gitleaks_{$env:GLVERSION}_windows_x64"
+ gitleaks_path: "${{env:GLROOT}}\\gitleaks_{$env:GLVERSION}_windows_x64"
  gitleaks_archive_path: "$env:gitleaks_path.zip"
  gitleaks_bin: "$env:gitleaks_path\\gitleaks.exe"
 
