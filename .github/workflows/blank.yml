@@ -16,7 +16,11 @@ on:
 defaults:
   run:
     shell: pwsh
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# A workflow run is made up of one or more jobs that can run sequentially or in
+
+env:
+  DAY_OF_WEEK: Monday
+
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -36,4 +40,5 @@ jobs:
         run: |
           echo ${{ steps.step_one.outputs.test }}
           echo ${{ steps.step_one.outputs.testwbr }}
+          run: echo "Today is $DAY_OF_WEEK!"
        
