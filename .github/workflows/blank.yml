@@ -25,8 +25,9 @@ env:
  gitleaks_archive_path: "$env:gitleaks_path.zip"
  gitleaks_bin: "$env:gitleaks_path\\gitleaks.exe"
  path: ""
- path2: Join-Path"$Env:GLROOT""gitleaks"
-
+ path2: Join-Path env:GLROOT "gitleaks"
+ $pathcheck: ""
+ 
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -40,6 +41,7 @@ jobs:
            echo $env:path: Join-Path $env:GLROOT "gitleaks"
            echo "test='hello'" >> $env:GITHUB_OUTPUT
            echo "testwbr=hello" >> $env:GITHUB_OUTPUT
+           echo $env:pathcheck: Join-Path C: "Program Files"
         #  echo "action_state=yellow" >> $GITHUB_ENV
        # echo "test2='hello2'" >> $GITHUB_OUTPUT
        #   echo "test3='hello3'" >> GITHUB_OUTPUT
