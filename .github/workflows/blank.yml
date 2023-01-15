@@ -48,6 +48,8 @@ jobs:
       - name: Use the value
         run: |
            echo "$env:gitleaks_bin detect -s"
+           echo "$env:action_state"
+           echo $env:action_state
         # echo ${{ steps.step_one.outputs.test }}
         #  echo ${{ steps.step_one.outputs.testwbr }}
         #  echo "$Env:path"
