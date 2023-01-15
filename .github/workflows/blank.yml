@@ -17,16 +17,6 @@ defaults:
   run:
     shell: pwsh
 # A workflow run is made up of one or more jobs that can run sequentially or in
-
-env:      
- GLVERSION: "8.15.2"
- GLROOT: "C:\\Gitleaks"
- gitleaks_path: $env:GLROOT"\\gitleaks_"$env:GLVERSION"_windows_x64"
- gitleaks_archive_path: "$env:gitleaks_path.zip"
- gitleaks_bin: "$env:gitleaks_path\\gitleaks.exe"
- path: ""
- path2: Join-Path env:GLROOT "gitleaks"
- $pathcheck: ""
  
 jobs:
   # This workflow contains a single job called "build"
@@ -38,6 +28,16 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
+           $GLVERSION="8.15.2"
+           $GLROOT="C:\Gitleaks"
+           $gitleaks_path = "${GLROOT}\gitleaks_${GLVERSION}_windows_x64"
+           $gitleaks_archive_path = "${gitleaks_path}.zip"
+           $gitleaks_bin = "$gitleaks_path\gitleaks.exe"
+           
+           echo "gitleaks_path=$gitleaks_path" >> $env:GITHUB_ENV
+           echo "gitleaks_bin=$gitleaks_bin" >> $env:GITHUB_ENV
+           echo "gitleaks_config_file_path=$gitleaks_config_file_path" >> $env:GITHUB_ENV
+           
            echo $env:pathcheck = Join-Path $env:GLROOT "gitleaks"
            echo "test='hello'" >> $env:GITHUB_OUTPUT
            echo "testwbr=hello" >> $env:GITHUB_OUTPUT
