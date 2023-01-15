@@ -37,7 +37,7 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
-           echo $env:path = Join-Path "$env:GLROOT" "\\gitleaks"
+           echo $env:path: Join-Path $env:GLROOT "gitleaks"
            echo "test='hello'" >> $env:GITHUB_OUTPUT
            echo "testwbr=hello" >> $env:GITHUB_OUTPUT
         #  echo "action_state=yellow" >> $GITHUB_ENV
