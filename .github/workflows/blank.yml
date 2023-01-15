@@ -25,7 +25,7 @@ env:
  gitleaks_archive_path: "$env:gitleaks_path.zip"
  gitleaks_bin: "$env:gitleaks_path\\gitleaks.exe"
  path: ""
- path2: Join-Path "$Env:GLROOT""\\gitleaks"
+ path2: Join-Path"$Env:GLROOT""gitleaks"
 
 jobs:
   # This workflow contains a single job called "build"
