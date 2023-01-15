@@ -1,0 +1,33 @@
+name: Pull request template
+
+on: 
+  pull_request:
+    types: [opened, closed, synchronize]
+
+jobs:
+  set_template:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check branch name
+      if: github.base_ref == 'master'
+      uses: actions/github-script@v3
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const context = github.context;
+          const pr = context.payload.pull_request;
+          const { owner, repo } = context.repo;
+          const template = 'master.md';
+          await github.pulls.update({ owner, repo, pull_request_number: pr.number, body: template })
+       
+    - name: Check branch name
+      if: github.base_ref == 'test'
+      uses: actions/github-script@v3
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const context = github.context;
+          const pr = context.payload.pull_request;
+          const { owner, repo } = context.repo;
+          const template = 'test.md';
+          await github.pulls.update({ owner, repo, pull_request_number: pr.number, body: template });
