@@ -36,21 +36,20 @@ jobs:
            
            echo "gitleaks_path=$gitleaks_path" >> $env:GITHUB_ENV
            echo "gitleaks_bin=$gitleaks_bin" >> $env:GITHUB_ENV
-           echo "gitleaks_config_file_path=$gitleaks_config_file_path" >> $env:GITHUB_ENV
            
-           echo $env:pathcheck = Join-Path $env:GLROOT "gitleaks"
-           echo "test='hello'" >> $env:GITHUB_OUTPUT
-           echo "testwbr=hello" >> $env:GITHUB_OUTPUT
-           echo $env:pathcheck: Join-Path C: "Program Files"
-           echo "action_state=yellow" >> $env:GITHUB_ENV
+       #    echo $env:pathcheck = Join-Path $env:GLROOT "gitleaks"
+       #    echo "test='hello'" >> $env:GITHUB_OUTPUT
+       #    echo "testwbr=hello" >> $env:GITHUB_OUTPUT
+       #    echo $env:pathcheck: Join-Path C: "Program Files"
+       #    echo "action_state=yellow" >> $env:GITHUB_ENV
        # echo "test2='hello2'" >> $GITHUB_OUTPUT
        #   echo "test3='hello3'" >> GITHUB_OUTPUT
       - name: Use the value
         run: |
-           echo "$env:gitleaks_bin detect -s"
-           echo "$env:action_state"
-           echo $env:action_state
-           echo "$env:pathcheck"
+          echo "$env:gitleaks_bin detect -s"
+       # echo "$env:action_state"
+       #    echo $env:action_state
+        #   echo "$env:pathcheck"
         # echo ${{ steps.step_one.outputs.test }}
         #  echo ${{ steps.step_one.outputs.testwbr }}
         #  echo "$Env:path2"
