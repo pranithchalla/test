@@ -47,10 +47,12 @@ jobs:
       - name: Use the value
         run: |
           echo "$env:gitleaks_bin detect -s"
+          echo "::error file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
        # echo "$env:action_state"
        #    echo $env:action_state
         #   echo "$env:pathcheck"
         # echo ${{ steps.step_one.outputs.test }}
         #  echo ${{ steps.step_one.outputs.testwbr }}
         #  echo "$Env:path2"
+        
        
