@@ -21,7 +21,7 @@ defaults:
 env:
  GLVERSION: "8.15.2"
  GLROOT: "C:\\Gitleaks"
- gitleaks_path: ""
+ gitleaks_path: "$env:GLROOT\\gitleaks_$env:GLVERSION_windows_x64"
  gitleaks_archive_path: ""
  gitleaks_bin: ""
 
@@ -35,7 +35,6 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
-           echo $env:gitleaks_path += $env:GLROOT "\\gitleaks_" $env:GLVERSION "_windows_x64"
            echo "test='hello'" >> $env:GITHUB_OUTPUT
            echo "testwbr=hello" >> $env:GITHUB_OUTPUT
         #  echo "action_state=yellow" >> $GITHUB_ENV
