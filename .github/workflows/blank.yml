@@ -38,7 +38,7 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
-           echo $env:path: Join-Path $env:GLROOT "gitleaks"
+           echo $env:path = Join-Path $env:GLROOT "gitleaks"
            echo "test='hello'" >> $env:GITHUB_OUTPUT
            echo "testwbr=hello" >> $env:GITHUB_OUTPUT
            echo $env:pathcheck: Join-Path C: "Program Files"
@@ -50,8 +50,8 @@ jobs:
            echo "$env:gitleaks_bin detect -s"
            echo "$env:action_state"
            echo $env:action_state
+           echo "$env:path"
         # echo ${{ steps.step_one.outputs.test }}
         #  echo ${{ steps.step_one.outputs.testwbr }}
-        #  echo "$Env:path"
         #  echo "$Env:path2"
        
