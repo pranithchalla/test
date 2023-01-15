@@ -22,6 +22,8 @@ env:
  GLVERSION: "8.15.2"
  GLROOT: "C:\\Gitleaks"
  gitleaks_path: "$env:GLROOT\\gitleaks_$env:GLVERSION_windows_x64"
+ path: ""
+ path2: Join-Path "$env:GLROOT" "\\gitleaks"
  gitleaks_archive_path: ""
  gitleaks_bin: ""
 
@@ -35,6 +37,7 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
+           echo $env:path = Join-Path "$env:GLROOT" "\\gitleaks"
            echo "test='hello'" >> $env:GITHUB_OUTPUT
            echo "testwbr=hello" >> $env:GITHUB_OUTPUT
         #  echo "action_state=yellow" >> $GITHUB_ENV
@@ -44,5 +47,6 @@ jobs:
         run: |
           echo ${{ steps.step_one.outputs.test }}
           echo ${{ steps.step_one.outputs.testwbr }}
-          echo "Today is  $env:gitleaks_path"
+          echo "$env:path"
+          echo "$env:path2"
        
