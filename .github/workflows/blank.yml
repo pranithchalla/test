@@ -47,7 +47,7 @@ jobs:
       - name: Use the value
         run: |
           echo "$env:gitleaks_bin detect -s"
-          echo "::error file=blank.yml,line=50,col=5,endColumn=7::Missing semicolon"
+          echo "::error ::Missing semicolon"
        # echo "$env:action_state"
        #    echo $env:action_state
         #   echo "$env:pathcheck"
