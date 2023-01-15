@@ -18,14 +18,14 @@ defaults:
     shell: pwsh
 # A workflow run is made up of one or more jobs that can run sequentially or in
 
-env:
+env:      
  GLVERSION: "8.15.2"
  GLROOT: "C:\\Gitleaks"
- gitleaks_path: "$Env:GLROOT\\gitleaks_$env:GLVERSION_windows_x64"
+ gitleaks_path: "$env:GLROOT\\gitleaks_$env:GLVERSION_windows_x64"
+ gitleaks_archive_path: "$env:gitleaks_path.zip"
+ gitleaks_bin: "$env:gitleaks_path\\gitleaks.exe"
  path: ""
- path2: Join-Path "$Env:GLROOT" "\\gitleaks"
- gitleaks_archive_path: ""
- gitleaks_bin: ""
+ path2: Join-Path "$Env:GLROOT""\\gitleaks"
 
 jobs:
   # This workflow contains a single job called "build"
@@ -45,8 +45,9 @@ jobs:
        #   echo "test3='hello3'" >> GITHUB_OUTPUT
       - name: Use the value
         run: |
-          echo ${{ steps.step_one.outputs.test }}
-          echo ${{ steps.step_one.outputs.testwbr }}
-          echo "$Env:path"
-          echo "$Env:path2"
+           echo "$env:gitleaks_bin detect -s"
+        # echo ${{ steps.step_one.outputs.test }}
+        #  echo ${{ steps.step_one.outputs.testwbr }}
+        #  echo "$Env:path"
+        #  echo "$Env:path2"
        
