@@ -2,7 +2,7 @@ name: Pull request template
 
 on: 
   pull_request:
-    types: [opened, closed, synchronize]
+    types: [created, opened, closed, synchronize]
 
 jobs:
   set_template:
