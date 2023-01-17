@@ -48,7 +48,7 @@ jobs:
         run: |
           echo "$env:gitleaks_bin detect -s"
           echo "::error ::Missing semicolon"
-          $env:gitleaks_bin detect -s "${{ github.workspace }}" -c "$env:gitleaks_bin" -l debug -v --log-opts="XXX" -r gitleaksResults.json
+          echo "$env:gitleaks_bin detect -s "${{ github.workspace }}" -c "$env:gitleaks_bin" -l debug -v --log-opts="XXX" -r gitleaksResults.json"
        # echo "$env:action_state"
        #    echo $env:action_state
         #   echo "$env:pathcheck"
