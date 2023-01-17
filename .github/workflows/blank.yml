@@ -46,7 +46,8 @@ jobs:
        #   echo "test3='hello3'" >> GITHUB_OUTPUT
       - name: Use the value
         run: |
-          echo "$env:gitleaks_bin detect -s"
+          echo "${{env:gitleaks_bin}} detect -s"
+          "$env:gitleaks_bin detect -s"
           echo "::error ::Missing semicolon"
           echo "$env:gitleaks_bin detect -s "${{ github.workspace }}" -c "$env:gitleaks_bin" -l debug -v --log-opts="XXX" -r gitleaksResults.json"
        # echo "$env:action_state"
